@@ -4,5 +4,121 @@
   box-sizing: border-box;
 }
 body {
-  background-color: green;
+  background-color: wheat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  margin-top: 10rem;
+  background-color: blueviolet;
+  height: 60vh;
+  width: 25vw;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  min-width: 20rem;
+  min-height: 25rem;
+  transform: translate3d(0, 0, 0);
+}
+.icon {
+  animation: left-right 2s ease-in-out infinite alternate-reverse both;
+}
+@-webkit-keyframes left-right {
+  0% {
+    -webkit-transform: translateX(5px);
+    transform: translateX(5px);
+  }
+  100% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes left-right {
+  0% {
+    -webkit-transform: translateX(5px);
+    transform: translateX(5px);
+  }
+  100% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+}
+.inputData {
+  text-align: center;
+}
+input {
+  border-radius: 10px;
+  margin-top: 2rem;
+  outline: none;
+  border: 2px solid black;
+  text-align: center;
+  font-size: 1.3rem;
+}
+.Info {
+  text-align: center;
+  margin-top: 2rem;
+}
+.temp {
+  margin: 3rem;
+}
+.wave {
+  opacity: 0.4;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  background: white;
+  width: 50rem;
+  height: 50rem;
+  margin-left: -25rem;
+  margin-top: -20rem;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  animation: drift 3s infinite linear;
+  z-index: -1;
+}
+.wave_three {
+  animation: drift 5s infinite linear;
+  z-index: -1;
+  opacity: 0.3;
+}
+.wave_two {
+  animation: drift 7s infinite linear;
+  opacity: 0.4;
+}
+
+.box::after {
+  content: "";
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transform: translate3d(0, 0, 0);
+}
+@keyframes drift {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+@-webkit-keyframes drift {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+.Data_not_found {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 2rem;
+  color: black;
+  font-weight: bold;
 }
