@@ -10,7 +10,7 @@ const Tempapp = () => {
       const response = await fetch(url);
 
       const resJson = await response.json();
-      console.log(resJson.main);
+
       setCity(resJson.main);
     };
 
